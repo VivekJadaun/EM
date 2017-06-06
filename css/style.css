@@ -102,9 +102,10 @@ body{
 	border: 1px #4caf50 ;
 	font-size: 1.2em;
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	box-shadow: 0 14px 30px -5px rgba(0,0,0,0.85);
 }
 #signup-btn:hover{
-	box-shadow: 0 14px 30px -5px rgba(0,0,0,0.85);
+	
 }
 #front{
 	display:flex;
