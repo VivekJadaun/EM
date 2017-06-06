@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="third party\Bootstrap\css\bootstrap.min.css">
-	<link rel="stylesheet" href="css\style.css">
+	<link rel="stylesheet" href="..\third party\Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\style.css">
 	<title>Data Interpreter</title>
 </head>
 
@@ -15,7 +15,7 @@
 		<nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<a href="index.php" class="pull-left" style="text-decoration:none">
-					<div id="hpcs-logo" alt="hpcs pvt.ltd." ><img src="resources\images\logo2.png" width="15%" height="15%"> HPC Sphere </div>
+					<div id="hpcs-logo" alt="hpcs pvt.ltd." ><img src="..\resources\images\logo2.png" width="15%" height="15%"> HPC Sphere </div>
 				</a>
 				<a href="#" class="pull-right" style="text-decoration:none">
 					<span class="glyphicon glyphicon-envelope" id="contact" aria-hidden="true"></span>
@@ -32,6 +32,12 @@
 			</div>
 		</nav>
 		</header>
+	</div>
+	
+	<div class="container-fluid">
+		<table id="dg" title="My Users" style="width:550px;height:250px"
+        toolbar="#toolbar" idField="id"
+        rownumbers="true" fitColumns="true" singleSelect="true">
 	</div>
 </body>
 </html>
