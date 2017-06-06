@@ -1,0 +1,63 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="third party\Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" href="css\style.css">
+	<title>Expense manager</title>
+	
+</head>
+
+<body>
+	<div class="container">
+		<header>
+		<nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<a href="index.php" class="pull-left" style="text-decoration:none">
+					<div id="hpcs-logo" alt="hpcs pvt.ltd." ><img src="resources\images\logo2.png" width="15%" height="15%"> HPC Sphere </div>
+				</a>
+				<a href="#" class="pull-right" style="text-decoration:none">
+					<span class="glyphicon glyphicon-envelope" id="contact" aria-hidden="true"></span>
+				</a>
+				<a href="html/signup.html" class="pull-right" style="text-decoration:none">	
+					<span id="signup" alt="signup" >Sign up</span>
+				</a>
+				<a href="html/signin.html" class="pull-right" style="text-decoration:none">	
+					<span id="signin" alt="signin" >Sign in</span>
+				</a>
+				<a href="" class="pull-right" style="text-decoration:none">	
+					<span id="hurry" alt="direct data interepretation" >I'm in a hurry</span>
+				</a>
+			</div>
+		</nav>
+		</header>
+	</div>
+	<div class="container" id="front">
+		<div class="jumbotron col-md-8 col-md-offset-0" id="j-left">
+			<h1> Welcome to Expense Manager</h1>
+			<h2> Convert data into visually appealing graphs and charts and ease your work.</h2>
+			<h3> Coming Soon!</h3>
+		</div>
+		<div class="jumbotron col-md-4 col-md-offset-1 " id="j-right">
+			<form id="form1" method="post" action="../php/register.php" autocomplete="off">
+				<fieldset >
+					<legend id="lgnd">Sign Up for free</legend>
+					Email <br>
+					<input type="email" name="email" id="mail" value="" placeholder="user@example.com" autofocus required><br><br>
+					Username <br>
+					<input type="text" name="user" id="usr" value="" placeholder="Pick a Username" required><br><br>
+					Password <br>
+					<input type="password" name="pwd" id="pswd" value="" placeholder="Setup a password" required><br><br>
+					Confirm Password <br>
+					<input type="password" name="cpwd" id="2pswd" value="" placeholder="Retype password" required><br><br>
+					Mobile <br>
+					<input type="tel" name="mobile" id="mob" value="" placeholder="+91-" required><br><br>
+					<input type="submit" id="signup-btn"value="Sign Up">							
+				</fieldset>
+			</form><br>
+		</div>
+	</div>
+</body>
+</html>

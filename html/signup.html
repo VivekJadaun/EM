@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="..\third party\Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\style.css">
+	<link rel="stylesheet" href="..\css\signupstyle.css">
+	<title>New User</title>
+</head>
+<body>
+	<div class="container">
+		<header>
+		<nav id="header-nav" class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<a href="index.php" class="pull-left" style="text-decoration:none">
+					<div id="hpcs-logo" alt="hpcs pvt.ltd." ><img src="..\resources\images\logo2.png" width="20%" height="20%"> HPC Sphere </div>
+				</a>
+				<a href="#" class="pull-right" style="text-decoration:none">
+					<span class="glyphicon glyphicon-envelope" id="contact" aria-hidden="true"></span>
+				</a>
+				<a href="html/signup.html" class="pull-right" style="text-decoration:none">	
+					<span id="signup" alt="signup" >Sign up</span>
+				</a>
+				<a href="html/signin.html" class="pull-right" style="text-decoration:none">	
+					<span id="signin" alt="signin" >Sign in</span>
+				</a>
+				
+			</div>
+		</nav>
+		</header>
+	</div>
+	<table width="100%" >
+		<tr>
+			<td width="50%">
+				<div style="text-align:left; float:left; margin-left:50px; padding-left:50px" width="100%" >
+					<form method="post" action="../php/signup.php">
+						<fieldset>
+							<legend>Registration Details</legend>
+							Enter Username of your choice:<br>
+							<input type="text" name="user" id="usr" value="" placeholder="Username" autofocus required><br><br>
+							Set up your password:<br>
+							<input type="password" name="pwd" id="passwd" value="" placeholder="Password" required><br><br>
+							<input type="submit" >							
+						</fieldset>
+					</form><br>
+				</div>
+			</td>
+			<td width="50%" style="margin-right:50px; padding-right:50px">
+				<h1 style="text-align:right">Before we get started<br>Please fill in these details.</h1>
+				<br>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

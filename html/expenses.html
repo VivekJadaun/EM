@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>	
+	<title> Your Expenses </title>
+</head>
+	
+<body>
+	<div>
+		<form method="post" action="../php/expenses.php">
+			<fieldset>
+				<legend> Details of this expenditure</legend>
+				<br>
+				Amount: <br><input type="number" name="amount" id="amt" value="" placeholder="&#8377 " autofocus required ><br><br>
+				Mode of payment:<br><input type="text" name="mode" id="t_mode" value="Cash" placeholder="" ><br><br>
+				Comments: <br><textarea name="cmnt" id="comment" placeholder="Something worth mentioning about this expenditure?" rows="10" cols="30"></textarea><br><br>
+				<input type="submit" name="btn1" id="sub"><br><br>
+			</fieldset>
+		</form>
+	</div>
+
+</body>
+</html>

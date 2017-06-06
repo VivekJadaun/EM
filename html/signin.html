@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="..\third party\Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" href="..\css\style.css">
+	<link rel="stylesheet" href="..\css\signupstyle.css">
+	<title> Enter your credentials</title>
+	<script>
+		function submission(){
+			var user="Welcome "+document.getElementById("user").value;
+			document.getElementById("disp").innerHTML = user;
+		}
+	</script>
+</head>
+<body>
+	<div style="text-align:right; float:right" width="50%" >
+		<form method="post" action="../php/login.php" name="submit" autocomplete="on">
+				<fieldset>
+					<legend> User credentials </legend>
+					Enter Username:
+					<input type="text" name="user" id="" value="" placeholder="Username" class="tooltip" autofocus required><br><br>
+					Enter password:
+					<input type="password" name="pwd" id="passwd" value="" placeholder="Password" class="tooltip" required><br><br>
+					<input type="submit" name="btn1" id="sub">
+				</fieldset>
+		</form><br>
+		<div id="disp">Please Enter your credentials</div>
+	</div>
+</body>
+</html>
