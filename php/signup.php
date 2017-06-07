@@ -3,7 +3,7 @@
 <head></head>
 <body>
 	<?php 
-	$db = mysqli_connect('localhost','root','NULL','expensemanager');
+	$db = mysqli_connect('localhost','vivek','alohamora','expensemanager');
 	if (!$db) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
