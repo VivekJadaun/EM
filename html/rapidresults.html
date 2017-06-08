@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	<link rel="stylesheet" href="..\third party\Bootstrap\css\bootstrap.min.css">
+	<link rel="stylesheet" media="screen" href="..\third party\handsontable\dist\handsontable.full.css">
 	<link rel="stylesheet" href="..\css\style.css">
 	<link rel="stylesheet" href="..\css\rapidstyle.css">
-	<script type="text/javascript" src="..\third party\node_modules\fusioncharts\fusioncharts.js"></script>
-	<script type="text/javascript" src="..\third party\node_modules\fusioncharts\themes\fusioncharts.theme.ocean.js"></script>
+	<script src="..\third party\handsontable\dist\handsontable.full.js"></script>
 	<title>Data Interpreter</title>
 	
 </head>
@@ -24,10 +24,10 @@
 				<a href="#" class="pull-right" style="text-decoration:none">
 					<span class="glyphicon glyphicon-envelope" id="contact" aria-hidden="true"></span>
 				</a>
-				<a href="html/signup.html" class="pull-right" style="text-decoration:none">	
+				<a href="signup.html" class="pull-right" style="text-decoration:none">	
 					<span id="signup" alt="signup" >Sign up</span>
 				</a>
-				<a href="html/signin.html" class="pull-right" style="text-decoration:none">	
+				<a href="signin.html" class="pull-right" style="text-decoration:none">	
 					<span id="signin" alt="signin" >Sign in</span>
 				</a>
 			</div>
@@ -35,134 +35,30 @@
 		</header>
 	</div>
 	<div class="container-fluid" id="excel">
-		<div class="jumbotron handsontable pull-left col-md-6 " id="worksheet">
-			<table class="htCore" id="table">
-            <colgroup>
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-				<col style="width: 60px;">
-			</colgroup>
-
-		    <thead>
-			<tr>
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">A</span>
-				</div>
-			  </th>
-
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">B</span>
-				</div>
-			  </th>
-
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">C</span>
-				</div>
-			  </th>
-
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">D</span>
-				</div>
-			  </th>
-
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">E</span>
-				</div>
-			  </th>
-
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">F</span>
-				</div>
-			  </th>
-			  
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">G</span>
-				</div>
-			  </th>
-			  
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">H</span>
-				</div>
-			  </th>
-			  
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">I</span>
-				</div>
-			  </th>
-			  
-			  <th>
-				<div class="relative">
-				  <span class="colHeader">J</span>
-				</div>
-			  </th>
-			</tr>
-			</thead>
-
-			<tbody>
-			<tr onkeypress="newLine()">
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			  <td class=""><input type="text"></td>
-			</tr>  
-			</tbody>
-			</table>
+		<div class="col-md-6 pull-left " id="worksheet">
 		</div>
 
-		<div class="jumbotron pull-right col-md-6 col-md-offset-1" id="canvas">
+		<div class="col-md-6 pull-right" id="canvas">
 			<canvas id="chart">
 							
 			</canvas>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		var data = function () {
+		  return Handsontable.helper.createSpreadsheetData(1, 0);
+		};
+		var container = document.getElementById("worksheet");
+		var hot = new Handsontable(container, {
+			data: data(),
+			minSpareCols: 11,
+			minSpareRows: 13,
+			rowHeaders: true,
+			colHeaders: true
+		});
+		
+	</script>
 
-<script type="text/javascript">
-	
-	<!-- document.getElementById('canvas').addEventListener("click",newLine); -->
-	var table = document.getElementById("table");
-	var n_row;
-	for(var j=0;j<13;j++){
-		n_row = table.insertRow(1);
-		for(var i=0;i<10;i++){
-			n_row.insertCell(i);
-		}
-	}
-	document.getElementById("table").lastChild.appendChild(newrow);
-	
-	document.addEventListener("keypress",newLine);
-	function newLine(e){
-		if(e.keyCode == 13){
-			var table = document.getElementById("table");
-			var n_row = table.insertRow(10);
-			for(var i=0;i<10;i++){
-				n_row.insertCell(i);
-			}
-			document.getElementById("table").lastChild.appendChild(newrow);
-			
-		}
-	}
-</script>
 </body>
 </html>
