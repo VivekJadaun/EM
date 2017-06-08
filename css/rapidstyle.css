@@ -1,19 +1,28 @@
+body{
+	background-color:#666;
+}
+canvas{
+	width:100%;
+	height:100%; 
+	background-color:#fafbfc;
+	border-radius: 10px;
+}
 .handsontable {
   position: relative;
 }
-
 .handsontable table,
 .handsontable tbody,
 .handsontable thead,
 .handsontable td,
 .handsontable th,
 .handsontable div {
-  box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  
 }
 
-.handsontable table.htCore {
+.htCore {
   border-collapse: separate;
   position: relative;
   border-spacing: 0;
@@ -27,10 +36,6 @@
 }
 
 .handsontable col {
-  width: 60px;
-}
-
-.handsontable col.rowHeader {
   width: 60px;
 }
 
@@ -471,7 +476,6 @@ ul.context-menu-list li {
 
 .handsontable tbody td {
   margin:0; padding:0;
-  padding-right:12px;
 }
 
 input {
@@ -487,4 +491,19 @@ input {
 input:focus { 
   border:2px solid #5292F7;
   outline: none;
+}
+ /*--------------------------------*/
+#excel{
+	display:flex;
+}
+#worksheet{
+	padding: 0;
+	background-color:#24292e;
+	display: run-in;
+}
+#canvas{
+	background-color:#24292e;
+}
+#header-nav{
+	padding-bottom:10px;
 }
