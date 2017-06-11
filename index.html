@@ -6,6 +6,14 @@
 	<link src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="third party\Bootstrap\css\bootstrap.min.css">
 	<link rel="stylesheet" href="css\style.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<script type="text/javascript">
+	      var onloadCallback = function() {
+		grecaptcha.render('html_element', {
+		  'sitekey' : 'your_site_key'
+		});
+	      };
+	</script>
 	<title>Expense manager</title>
 	
 </head>
@@ -56,8 +64,16 @@
 					<input type="tel" name="mobile" id="mob" value="" placeholder="+91-" required><br><br>
 					<input type="submit" id="signup-btn"value="Sign Up">							
 				</fieldset>
+				<div class="g-recaptcha" data-sitekey="6LebBSUUAAAAAObcnzoQ_aVxEe14I90OyfUV9BKO"></div>
 			</form><br>
+			<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+				async defer>
+			</script>
 		</div>
 	</div>
 </body>
+<?php
+	$secret=$_POST['6LebBSUUAAAAAGWtsp-AC4F-cn3XYPj2gxCWJPq_'];
+	$response=$_POST['g-recaptcha-response'];
+?>
 </html>
