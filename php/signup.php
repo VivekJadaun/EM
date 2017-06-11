@@ -13,8 +13,22 @@
 	$retypepwd = $_POST['cpwd'];
 	$secret=$_POST['6LebBSUUAAAAAGWtsp-AC4F-cn3XYPj2gxCWJPq_'];
 	$response=$_POST['g-recaptcha-response'];
-	https://www.google.com/recaptcha/api/siteverify
-	POST /siteverify HTTP/1.1
+	$verify=http_build_query($secret,$response);
+	$contextData=array(
+		'method' => 'POST',
+		'header' => "Connection: close\r\n".
+			    "Content-Length: ".strlen($verify)."\r\n",
+		'content'=> $verify);
+	$context= stream_context_create(array ( 'http' => $contextData));
+	$answer= file_get_contents (
+		'https://www.google.com/recaptcha/api/siteverify',
+		false,
+		$context);
+	$array= json_decode($json,true);
+	if ($array['success']=="true")
+		echo "congratulations! u are a human";
+	else 
+		echo "BOOO HOOO";
 	if($password == $retypepwd){
 		$query = "SELECT * FROM userdata WHERE user_id='$user' LIMIT 1";
 		$result=mysqli_query($db,$query);
