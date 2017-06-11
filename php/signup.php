@@ -11,6 +11,10 @@
 	$user = $_POST['user'];
 	$password = $_POST['pwd'];
 	$retypepwd = $_POST['cpwd'];
+	$secret=$_POST['6LebBSUUAAAAAGWtsp-AC4F-cn3XYPj2gxCWJPq_'];
+	$response=$_POST['g-recaptcha-response'];
+	https://www.google.com/recaptcha/api/siteverify
+	POST /siteverify HTTP/1.1
 	if($password == $retypepwd){
 		$query = "SELECT * FROM userdata WHERE user_id='$user' LIMIT 1";
 		$result=mysqli_query($db,$query);
