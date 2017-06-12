@@ -12,8 +12,9 @@
 	$password = $_POST['pwd'];
 	$retypepwd = $_POST['cpwd'];
 	$secret=$_POST['6LebBSUUAAAAAGWtsp-AC4F-cn3XYPj2gxCWJPq_'];
-	$response=$_POST['g-recaptcha-response'];
-	$verify=http_build_query($secret,$response);
+	$response=$_POST['g-recaptcha-response'];	
+	$remoteip=$_SERVER['REMOTE_ADDR'];
+	$verify=http_build_query($secret,$response,$remoteip);
 	$contextData=array(
 		'method' => 'POST',
 		'header' => "Connection: close\r\n".
@@ -24,7 +25,7 @@
 		'https://www.google.com/recaptcha/api/siteverify',
 		false,
 		$context);
-	$array= json_decode($json,true);
+	$array= json_decode($answer,true);
 	if ($array['success']=="true")
 		echo "congratulations! u are a human";
 	else 
